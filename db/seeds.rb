@@ -6,38 +6,43 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts 'Creating Coins...'
+spinner = TTY::Spinner.new('[:spinner] Cadastrando moedas', format: :dots)
+spinner.auto_spin
 
-Coin.create!([
-               {
-                 description: 'Bitcoin',
-                 acronym: 'BTC',
-                 url_image: 'https://cryptologos.cc/logos/bitcoin-sv-bsv-logo.png'
-               },
+coins = [
+  {
+    description: 'Bitcoin',
+    acronym: 'BTC',
+    url_image: 'https://cryptologos.cc/logos/bitcoin-sv-bsv-logo.png'
+  },
 
-               {
-                 description: 'Ethereum',
-                 acronym: 'ETH',
-                 url_image: 'https://cryptologos.cc/logos/ethereum-eth-logo.png'
-               },
+  {
+    description: 'Ethereum',
+    acronym: 'ETH',
+    url_image: 'https://cryptologos.cc/logos/ethereum-eth-logo.png'
+  },
 
-               {
-                 description: 'Dash',
-                 acronym: 'DASH',
-                 url_image: 'https://cryptologos.cc/logos/dash-dash-logo.png'
-               },
+  {
+    description: 'Dash',
+    acronym: 'DASH',
+    url_image: 'https://cryptologos.cc/logos/dash-dash-logo.png'
+  },
 
-               {
-                 description: 'Solana',
-                 acronym: 'SOL',
-                 url_image: 'https://cryptologos.cc/logos/solana-sol-logo.png'
-               },
+  {
+    description: 'Solana',
+    acronym: 'SOL',
+    url_image: 'https://cryptologos.cc/logos/solana-sol-logo.png'
+  },
 
-               {
-                 description: 'Near',
-                 acronym: 'NEAR',
-                 url_image: 'https://cryptologos.cc/logos/near-protocol-near-logo.png'
-               }
-             ])
+  {
+    description: 'Near',
+    acronym: 'NEAR',
+    url_image: 'https://cryptologos.cc/logos/near-protocol-near-logo.png'
+  }
+]
 
-puts 'Coins created successfully!'
+coins.each do |coin|
+  Coin.find_or_create_by!(coin)
+end
+
+spinner.success('(Concluído!)')
