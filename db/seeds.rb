@@ -51,8 +51,8 @@ spinner = TTY::Spinner.new('[:spinner] Cadastrando tipos de mineração', format
 spinner.auto_spin
 
 mining_types = [
-  { name: 'Proof of Work', acronym: 'PoW' },
-  { name: 'Proof of Stake', acronym: 'PoS' }
+  { description: 'Proof of Work', acronym: 'PoW' },
+  { description: 'Proof of Stake', acronym: 'PoS' }
 ]
 
 mining_types.each do |mining_type|
