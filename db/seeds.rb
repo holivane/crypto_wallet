@@ -46,3 +46,17 @@ coins.each do |coin|
 end
 
 spinner.success('(Concluído!)')
+
+spinner = TTY::Spinner.new('[:spinner] Cadastrando tipos de mineração', format: :dots)
+spinner.auto_spin
+
+minig_types = [
+  { name: 'Proof of Work', acronym: 'PoW' },
+  { name: 'Proof of Stake', acronym: 'PoS' }
+]
+
+minig_types.each do |minig_type|
+  MinigType.find_or_create_by!(minig_type)
+end
+
+spinner.success('(Concluído!)')

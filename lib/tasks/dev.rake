@@ -5,7 +5,7 @@ namespace :dev do
       show_spinner('Apagando DB', 'Banco de Dados apagado!') { `rails db:drop` }
       show_spinner('Criando DB', 'Banco de Dados criado!') { `rails db:create` }
       show_spinner('Migrando as tabelas', 'Tabelas migradas!') { `rails db:migrate` }
-      show_spinner('Populando as tabelas', 'Tabelas populadas!') { `rails db:seed` }
+      `rails db:seed`
     else
       puts 'Você não está em ambiente de desenvolvimento!'
     end
