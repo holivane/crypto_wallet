@@ -1,5 +1,6 @@
 class CoinsController < ApplicationController
-  before_action :set_coin, only: %i[ show edit update destroy ]
+  before_action :set_coin, only: %i[show edit update destroy]
+  before_action :set_mining_type_options, only: %i[new edit update create]
 
   # GET /coins or /coins.json
   def index
@@ -25,7 +26,7 @@ class CoinsController < ApplicationController
 
     respond_to do |format|
       if @coin.save
-        format.html { redirect_to coin_url(@coin), notice: "Coin was successfully created." }
+        format.html { redirect_to coin_url(@coin), notice: 'Coin was successfully created.' }
         format.json { render :show, status: :created, location: @coin }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +39,7 @@ class CoinsController < ApplicationController
   def update
     respond_to do |format|
       if @coin.update(coin_params)
-        format.html { redirect_to coin_url(@coin), notice: "Coin was successfully updated." }
+        format.html { redirect_to coin_url(@coin), notice: 'Coin was successfully updated.' }
         format.json { render :show, status: :ok, location: @coin }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +53,24 @@ class CoinsController < ApplicationController
     @coin.destroy
 
     respond_to do |format|
-      format.html { redirect_to coins_url, notice: "Coin was successfully destroyed." }
+      format.html { redirect_to coins_url, notice: 'Coin was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_coin
-      @coin = Coin.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def coin_params
-      params.require(:coin).permit(:description, :acronym, :url_image)
-    end
+  def set_mining_type_options
+    @mining_type_options = MiningType.all.pluck(:description, :id)
+  end
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_coin
+    @coin = Coin.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def coin_params
+    params.require(:coin).permit(:description, :acronym, :url_image, :mining_type_id)
+  end
 end
