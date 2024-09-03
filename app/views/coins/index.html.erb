@@ -24,9 +24,9 @@
             <%= image_tag "coin.png", size:"30" %>
           <% end %>
         </td>
-        <td><%= link_to 'Mostrar', coin %></td>
-        <td><%= link_to 'Editar', edit_coin_path(coin) %></td>
-        <td><%= link_to 'Excluir', coin, method: :delete, data: { confirm: 'Tem certeza que deseja excluir?' } %></td>
+        <td><%= link_to t('links.show'), coin %></td>
+        <td><%= link_to t('links.edit'), edit_coin_path(coin) %></td>
+        <td><%= link_to t('links.delete'), coin, method: :delete, data: { confirm: 'Tem certeza que deseja excluir?' } %></td>
       </tr>
     <% end %>
   </tbody>
