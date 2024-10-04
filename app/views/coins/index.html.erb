@@ -1,8 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Moedas</h1>
-<h2><%= cookies[:curso] %></h2>
-<h2><%= session[:curso] %></h2>
+<h1><%= Coin.model_name.human(count: @coins.count)%></h1>
 
 <table class="table table-hover">
   <thead>
@@ -28,7 +26,7 @@
         </td>
         <td><%= link_to t('links.show'), coin %></td>
         <td><%= link_to t('links.edit'), edit_coin_path(coin) %></td>
-        <td><%= link_to t('links.delete'), coin, method: :delete, data: { confirm: 'Tem certeza que deseja excluir?' } %></td>
+        <td><%= link_to t('links.delete'), coin, method: :delete, data: { confirm: t('messages.confirm') } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -36,5 +34,5 @@
 
 <br>
 
-<%= link_to 'Nova Moeda', new_coin_path %>
-<%= link_to 'Tela de início', root_path %>
+<%= link_to t('links.new'), new_coin_path, class:"btn btn-primary" %>
+<%= link_to t('welcome'), root_path, class:"btn btn-secondary" %>
