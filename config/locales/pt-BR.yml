@@ -11,3 +11,13 @@ pt-BR:
     show: "Mostrar"
     delete: "Apagar"
     new: "Cadastrar"
+    back: "Voltar"
+  new:
+    coin: "Nova Criptomoeda"
+    mining_type: "Novo Tipo de mineração"
+  editing:
+    coin: "Editando Criptomoeda"
+    mining_type: "Editando Tipo de mineração"
+  shwing:
+    coin: "Mostrando Criptomoeda"
+    mining_type: "Mostrando Tipo de mineração"
