@@ -12,6 +12,7 @@ pt-BR:
     delete: "Apagar"
     new: "Cadastrar"
     back: "Voltar"
+    save: "Salvar"
   new:
     coin: "Nova Criptomoeda"
     mining_type: "Novo Tipo de mineração"
