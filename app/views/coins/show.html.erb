@@ -1,19 +1,19 @@
-<p id="notice"><%= notice %></p>
+<h1><%= t('showing.coin')%></h1>
 
-<p>
-  <strong>Description:</strong>
+<div class="mb-3">
+  <strong><%= t('showing.description')%>:</strong>
   <%= @coin.description %>
-</p>
+</div>
 
-<p>
-  <strong>Acronym:</strong>
+<div class="mb-3">
+  <strong><%= t('showing.acronym')%>:</strong>
   <%= @coin.acronym %>
-</p>
+</div>
 
-<p>
-  <strong>Url image:</strong>
+<div class="mb-3">
+  <strong><%= t('showing.image')%>:</strong>
   <%= image_tag @coin.url_image, size:"30x30" %>
-</p>
+</div>
 
-<%= link_to 'Editar', edit_coin_path(@coin) %> |
-<%= link_to 'Voltar', coins_path %>
+<%= link_to t('links.edit'), edit_coin_path(@coin), class:"btn btn-primary" %>
+<%= link_to t('links.back'), coins_path, class:"btn btn-secondary" %>

@@ -22,3 +22,7 @@ pt-BR:
   showing:
     coin: "Mostrando Criptomoeda"
     mining_type: "Mostrando Tipo de Mineração"
+    description: "Descrição"
+    acronym: "Sigla"
+    image: "Imagem"
+    type: "Tipo"
