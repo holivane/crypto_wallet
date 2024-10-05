@@ -15,10 +15,10 @@ pt-BR:
     save: "Salvar"
   new:
     coin: "Nova Criptomoeda"
-    mining_type: "Novo Tipo de mineração"
+    mining_type: "Novo Tipo de Mineração"
   editing:
     coin: "Editando Criptomoeda"
-    mining_type: "Editando Tipo de mineração"
-  shwing:
+    mining_type: "Editando Tipo de Mineração"
+  showing:
     coin: "Mostrando Criptomoeda"
-    mining_type: "Mostrando Tipo de mineração"
+    mining_type: "Mostrando Tipo de Mineração"
